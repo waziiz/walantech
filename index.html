@@ -41,7 +41,7 @@ nav{
 /* ── زر تسجيل الدخول — متعدد الخدمات ── */
 .login-wrap{position:relative;}
 #loginNavBtn{
-  display:none;
+  display:inline-flex;
   border:1px solid var(--blue);color:var(--lblue);
   padding:8px 18px;border-radius:8px;font-size:14px;font-weight:600;
   text-decoration:none;cursor:pointer;background:transparent;
@@ -264,7 +264,7 @@ footer{background:var(--bg2);border-top:1px solid var(--border);padding:56px 5% 
   </ul>
   <div class="nav-right">
     <!-- ① زر تسجيل الدخول — متعدد الخدمات، يُفعّل من لوحة التحكم -->
-    <div class="login-wrap" id="loginWrap" style="display:block">
+    <div class="login-wrap" id="loginWrap">
       <button id="loginNavBtn">تسجيل الدخول ▾</button>
       <div class="login-dropdown">
         <div class="login-drop-title">اختر المنتج</div>
