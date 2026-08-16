@@ -4,58 +4,44 @@
 
 ## 📁 هيكل الملفات
 
-| الملف | الوصف |
-|-------|-------|
-| `index.html` | الصفحة الرئيسية |
-| `admin.html` | لوحة التحكم |
-| `pricing.html` | صفحة الأسعار |
-| `about.html` | من نحن |
-| `terms.html` | الشروط والأحكام |
-| `privacy.html` | سياسة الخصوصية |
-| `easy-erp.html` | صفحة Easy ERP |
-| `pos.html` | صفحة نقاط البيع |
-| `mobile-pos.html` | صفحة نقاط البيع المتنقل |
-| `apps.html` | صفحة تطبيقات الهاتف |
-| `walan-retail.html` | صفحة Walan Retail (جديد) |
-| `walan-gold.html` | صفحة Walan Gold (جديد) |
+النسخة العربية بالجذر، والنسخة الإنجليزية داخل مجلد `en/`.
 
-## 🚀 الرفع على GitHub Pages
+| الملف (عربي) | الملف (English) | الوصف |
+|---|---|---|
+| `index.html` | `en/index.html` | الصفحة الرئيسية |
+| `about.html` | `en/about.html` | من نحن |
+| `easy-erp.html` | `en/easy-erp.html` | Easy ERP |
+| `mobile-pos.html` | `en/mobile-pos.html` | نقاط البيع المتنقل |
+| `pos.html` | `en/pos.html` | أجهزة نقاط البيع |
+| `apps.html` | `en/apps.html` | تطبيقات الهاتف |
+| `walan-retail.html` | `en/walan-retail.html` | Walan Retail |
+| `walan-gold.html` | `en/walan-gold.html` | Walan Gold |
+| `pricing.html` | `en/pricing.html` | الأسعار |
+| `terms.html` | `en/terms.html` | الشروط والأحكام |
+| `privacy.html` | `en/privacy.html` | سياسة الخصوصية |
 
-### الخطوة 1 — أنشئ Repository
-1. اذهب إلى [github.com](https://github.com) وسجّل دخول
-2. اضغط **New repository**
-3. اسم الـ repo: `walantech` (أو أي اسم تريده)
-4. اجعله **Public**
-5. اضغط **Create repository**
+## 🚀 الرفع على GitHub ثم النشر عبر Vercel
 
-### الخطوة 2 — ارفع الملفات
-1. في صفحة الـ repo اضغط **uploading an existing file**
-2. اسحب وأفلت جميع ملفات الـ HTML
-3. اضغط **Commit changes**
+### الخطوة 1 — امسح محتوى الـ repo القديم وارفع الجديد
+```bash
+# داخل مجلد الملفات المستخرجة من ZIP
+git clone https://github.com/USERNAME/REPO.git
+cd REPO
+git rm -rf .
+cp -r /path/to/extracted/walantech/* .
+git add .
+git commit -m "Update site: Arabic + English, full content refresh"
+git push origin main
+```
 
-### الخطوة 3 — فعّل GitHub Pages
-1. اذهب لـ **Settings** → **Pages**
-2. في Source اختر **main** branch
-3. اضغط **Save**
-4. موقعك يصبح على: `https://USERNAME.github.io/walantech/`
+### الخطوة 2 — Vercel
+إذا الـ repo مربوط مسبقًا بـ Vercel، بيسحب التحديث وينشره تلقائيًا بعد الـ push مباشرة.
+إذا ما هو مربوط بعد: من لوحة Vercel اختر **Add New Project** → اختر نفس الـ repo → **Deploy**.
 
-### الخطوة 4 — ربط دومينك من name.com
-1. في GitHub Pages أضف Custom domain: `yourdomain.com`
-2. في name.com → **Manage DNS Records** أضف:
-   - Type: `A` | Host: `@` | Value: `185.199.108.153`
-   - Type: `A` | Host: `@` | Value: `185.199.109.153`
-   - Type: `A` | Host: `@` | Value: `185.199.110.153`
-   - Type: `A` | Host: `@` | Value: `185.199.111.153`
-   - Type: `CNAME` | Host: `www` | Value: `USERNAME.github.io`
-3. انتظر 10-30 دقيقة ✅
-
-## 🔐 لوحة التحكم
-- الرابط: `yourdomain.com/admin.html`
-- المستخدم: `admin`
-- كلمة المرور: `walan2024` ← **غيّرها قبل الرفع!**
+### الخطوة 3 — ربط الدومين
+من إعدادات المشروع في Vercel → **Domains** → أضف الدومين الخاص بك واتبع تعليمات DNS اللي يعرضها Vercel.
 
 ## 📞 معلومات التواصل
 - الهاتف: +966 53 071 1999
 - الدعم: 9200-09925
 - الإيميل: support@walantech.com
-- المبيعات: sales@walantech.com
