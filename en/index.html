@@ -114,8 +114,14 @@ footer{background:var(--bg2);border-top:1px solid var(--border);padding:56px 5% 
 .wa svg{width:27px;fill:#fff;}
 .fade{opacity:0;transform:translateY(26px);transition:opacity .6s,transform .6s;}
 .fade.in{opacity:1;transform:none;}
-@media(max-width:900px){.nav-links{display:none;}.hero-inner{grid-template-columns:1fr;}.hero-right{display:none;}.why-layout{grid-template-columns:1fr;}.contact-grid{grid-template-columns:1fr;}.footer-grid{grid-template-columns:1fr 1fr;}.stats-grid{grid-template-columns:repeat(2,1fr);}}
+@media(max-width:900px){.nav-links{display:none;}.hamburger{display:flex;}.hero-inner{grid-template-columns:1fr;}.hero-right{display:none;}.why-layout{grid-template-columns:1fr;}.contact-grid{grid-template-columns:1fr;}.footer-grid{grid-template-columns:1fr 1fr;}.stats-grid{grid-template-columns:repeat(2,1fr);}nav .btn-cta{display:none;}.nav-right{gap:6px;}.btn-lang{padding:6px 10px;font-size:12px;}.login-nav-btn{padding:6px 12px;font-size:13px;}}
 @media(max-width:600px){section{padding:56px 5%;}.footer-grid{grid-template-columns:1fr;gap:24px;}.why-grid{grid-template-columns:1fr;}}
+
+.hamburger{display:none;background:none;border:1px solid var(--border);border-radius:7px;padding:8px;cursor:pointer;flex-direction:column;gap:4px;}
+.hamburger span{display:block;width:22px;height:2px;background:var(--text);}
+.mob-menu{display:none;position:fixed;top:var(--nav-h);left:0;width:100%;background:var(--bg2);border-bottom:1px solid var(--border);padding:18px 5%;z-index:999;flex-direction:column;gap:16px;}
+.mob-menu.open{display:flex;}
+.mob-menu a{color:var(--muted);text-decoration:none;font-size:16px;}
 </style>
 </head>
 <body>
@@ -148,7 +154,20 @@ footer{background:var(--bg2);border-top:1px solid var(--border);padding:56px 5% 
     <a href="../index.html" class="btn-lang">عربي</a>
     <a href="#contact" class="btn-cta">Contact Us</a>
   </div>
+  <button class="hamburger" onclick="document.getElementById('mobMenu').classList.toggle('open')" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
 </nav>
+
+<div class="mob-menu" id="mobMenu">
+  <a href="about.html">About Us</a>
+  <a href="#services" onclick="this.closest('.mob-menu').classList.remove('open')">Products</a>
+  <a href="pricing.html">Pricing</a>
+  <a href="#why" onclick="this.closest('.mob-menu').classList.remove('open')">Why Walan</a>
+  <a href="#clients" onclick="this.closest('.mob-menu').classList.remove('open')">Partners</a>
+  <a href="#faq" onclick="this.closest('.mob-menu').classList.remove('open')">FAQ</a>
+  <a href="#contact" onclick="this.closest('.mob-menu').classList.remove('open')">Contact Us</a>
+</div>
 
 <section id="home">
   <div class="hero-bg"></div>
